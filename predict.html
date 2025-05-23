@@ -1,0 +1,46 @@
+<!-- predict.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+<style>
+        body {
+            background-image: url('static/bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image</h1>
+		<form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Predict</button>
+		</form>
+    </div>
+</body>
+</html>
